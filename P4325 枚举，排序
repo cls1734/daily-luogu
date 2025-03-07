@@ -1,0 +1,31 @@
+# P4325 [COCI 2006/2007 #1] Modulo
+
+## 题目描述
+Given two integers A and B, A modulo B is the remainder when dividing A by B. For example, the numbers 7, 14, 27 and 38 become 1, 2, 0 and 2, modulo 3. 
+Write a program that accepts 10 numbers as input and outputs the number of distinct numbers in the input, if the numbers are considered modulo 42.
+翻译
+给10个整数除42，问余数有多少种
+
+就是一道水题 ~~用这种水题来水真的没问题吗~~
+~~话说，这道题明明有一个排序标签，但是完全没用到排序啊(总不可能是因为unique吧)~~
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    vector<int> numbers(10);
+    set<int> remainders;
+
+    for (int i = 0; i < 10; ++i) {
+        cin >> numbers[i];
+    }
+
+    for (int num : numbers) {
+        int remainder = num % 42;
+        remainders.insert(remainder);
+    }
+    cout << remainders.size() << endl;
+    return 0;
+}
