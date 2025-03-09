@@ -1,0 +1,28 @@
+# P4414 [COCI 2006/2007 #2] ABC
+
+三个整数分别为 A,B,C。这三个数字不会按照这样的顺序给你，但它们始终满足条件：A < B < C。为了看起来更加简洁明了，我们希望你可以按照给定的顺序重新排列它们。
+
+
+~~我都是从哪里找来的这么多水题，我之前还想着应该没用这么多水题~~
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int nums[3];
+    string order;
+    
+    for (int i = 0; i < 3; ++i) {
+        cin >> nums[i];
+    }
+    
+    cin >> order;
+    
+    sort(nums, nums + 3);
+    
+    for (char ch : order) {
+        cout << nums[ch - 'A'] << " ";
+    }
+    
+    return 0;
+}
